@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+
+<head>
+    <meta charset="utf-8">
+</head>
+<head th:replace="init :: _head"/>
+<body>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+</style>
+
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<link rel="stylesheet" href="css/LoadingScreen.css">
+
+<header th:replace="init :: _header" > </header>
+
+<!--script maps-->
+<script src="js/chart/wordCloud.js"></script>
+<center><h3>Nube de palabras</h3></center>
+<hr class="col-md-6">
+<center>
+    <div class="card border-success mb-3" style="max-width: 30%;">
+        <div class="card-body text-success">
+            <p class="card-text">Se presenta las palabras con mas incidencia en los títulos de los documentos de investigación</p>
+        </div>
+    </div>
+</center>
+
+<div id="chartdiv"></div>
+
+<div id="loading-screen" style="display:none">
+    <img src="img/spinning-circles.svg">
+</div>
+</body>
+</html>

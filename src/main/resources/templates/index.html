@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  
+<head>
+  <meta charset="utf-8">
+</head>
+<head th:replace="init :: _head"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<body>
+  <header th:replace="init :: _header" > </header>
+  <section class="jumbotron text-center" >
+    <center>
+      <div class="col-md-10 text-center">
+        <h3 style="text-align: left">Acerca de:</h3>
+        <hr class="col-sm-12 text-left">
+        <p class="lead text-justify">
+          El presente proyecto es el resultado de todo el proceso que conlleva la extraccion de datos, preprocesamiento y generacion de datos RDF sobre el tema de "Tecnologias Emergentes".
+        </p>
+         <p class="lead text-justify">
+         1. Selección de fuente de datos: Se ha seleccionado la base de datos cientifica SCOPUS para la extraccion de datos correspondientes a la cadena de busqueda "TITLE-ABS-KEY ( emerging  AND technologies )  AND  ( LIMIT-TO ( PUBYEAR ,  2021 )  OR  LIMIT-TO ( PUBYEAR ,  2020 )  OR  LIMIT-TO ( PUBYEAR ,  2019 )  OR  LIMIT-TO ( PUBYEAR ,  2018 )  OR  LIMIT-TO ( PUBYEAR ,  2017 ) )  AND  ( LIMIT-TO ( SUBJAREA ,  "COMP" ) ) "
+         
+         </p>
+          <p class="lead text-justify">
+          2. Limpieza de datos: En este proceso se realiza de forma manual la correccion de la data obtenida de SCOPUS, como por ejemplo caracteres especiales en algunos campos, separadores dentro de un mismo campo, datos basura, entre otros.
+         </p>
+           <p class="lead text-justify">
+           3. Creacion de modelo ontologico: A partir de la data limpia se procede analizar todos los campos y hacer uso de vocabularios y ontologias existentes para asociarlos y crear un propio modelo.
+             </p>
+         
+         
+         <p class="lead text-justify">
+         4. Preprocesamiento de datos: Se ha desarrollado una aplicacion en el lenguaje de programacion JAVA haciendo uso de la libreria JENA para poder realizar la generacion de datos RDF a partir de la data limpia del punto anterior. El dato de salida sera el archivo RDf basado el modelo que hemos creado.
+           </p>
+           
+           <p class="lead text-justify">
+           5. Selección de repositorio RDF: Se ha seleccionado el repositorio RDF "GraphDB" por la facilidad de uso, ademas permite realizar consultas directas y por la compatibildad con el lenguaje de programacion JAVA.
+           
+               </p>
+               
+                <p class="lead text-justify">
+                6. Presentación de resultados: Este punto es el final en donde se desarrollo una aplicación web que permita realizar consultas SPARQL hacia nuestro repositorio RDF en donde se encuentra nuestra información para poder presentarla hacia el usuario.
+                
+                        </p>
+         
+         
+        <br>
+
+       
+      </div>
+      <br>
+  </section>
+</body>
+</html>
